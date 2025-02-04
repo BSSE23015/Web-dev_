@@ -59,4 +59,16 @@ button {
   user-select: none;
   padding: 12px 8px 12px 50px;
   cursor: pointer;
+  position: relative;
+}
+#to-do-list li::before {
+  content: "";
+  position: absolutes;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  background-image: url(images/unchecked.png);
+  background-size: cover;
+  background-position: center;
+  top: 12px;
 }
