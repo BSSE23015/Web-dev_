@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav {
+  background-color: purple;
+  color: white;
+  display: flex;
+  align-items: center;
+  height: 60px;
+  justify-content: space-around;
+}
+nav li {
+  font-size: 25px;
+  font-family: "Poppins", sans-serif;
+}
