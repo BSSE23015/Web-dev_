@@ -1,6 +1,5 @@
 let boxes = document.querySelectorAll(".box");
 let reset_Button = document.querySelector("#reset");
-let reset_btn = document.querySelector("#reset");
 let new_btn = document.querySelector("#new-btn");
 let msg_container = document.querySelector(".msg-container");
 let msg = document.querySelector("#winner-para");
@@ -28,9 +27,21 @@ boxes.forEach((box) => {
     checkWinner();
   });
 });
+const disable_boxes = () => {
+  for (box of boxes) {
+    box.disabled = true;
+  }
+};
+const enable_boxes = () => {
+  for (box of boxes) {
+    box.innerText = "";
+    box.disabled = false;
+  }
+};
 const showWinner = (winner) => {
   msg.innerHTML = "Congratulations winner " + winner;
   msg_container.classList.remove("hide");
+  disable_boxes();
 };
 function checkWinner() {
   for (let pattern of winningPattern) {
@@ -45,3 +56,10 @@ function checkWinner() {
     }
   }
 }
+const resetGame = () => {
+  turnO = true;
+  msg_container.classList.add("hide");
+  enable_boxes();
+};
+new_btn.addEventListener("click", resetGame);
+reset_Button.addEventListener("click", resetGame);
