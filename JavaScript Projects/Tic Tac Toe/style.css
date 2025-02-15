@@ -1,17 +1,42 @@
 * {
   margin: 0;
   padding: 0;
-  list-style: none;
 }
-nav {
-  background-color: purple;
-  color: white;
+
+body {
+  background-color: #476ab9;
+  text-align: center;
+}
+.container {
+  height: 70vh;
   display: flex;
   align-items: center;
-  height: 60px;
-  justify-content: space-around;
+  justify-content: center;
 }
-nav li {
-  font-size: 25px;
-  font-family: "Poppins", sans-serif;
+.game {
+  height: 60vmin;
+  width: 60vmin;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2vmin;
+}
+.box {
+  height: 18vmin;
+  width: 18vmin;
+  background-color: rgb(139, 75, 208);
+  border: none;
+  border-radius: 20px;
+  box-shadow: 5px 5px 5px lightblue;
+  color: white;
+  font-size: 9vmin;
+}
+#reset {
+  background-color: rgb(45, 84, 84);
+  height: 40px;
+  width: 70px;
+  border: none;
+  border-radius: 10px;
+  color: white;
 }
