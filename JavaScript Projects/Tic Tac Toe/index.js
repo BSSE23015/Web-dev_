@@ -15,12 +15,25 @@ let winningPattern = [
 boxes.forEach((box) => {
   box.addEventListener("click", () => {
     if (turnO) {
-      box.innerHTML = "O";
+      box.innerText = "O";
       turnO = false;
     } else {
-      box.innerHTML = "X";
+      box.innerText = "X";
       turnO = true;
     }
     box.disabled = true;
+    checkWinner();
   });
 });
+function checkWinner() {
+  for (let pattern of winningPattern) {
+    let pos_1 = boxes[pattern[0]].innerText;
+    let pos_2 = boxes[pattern[1]].innerText;
+    let pos_3 = boxes[pattern[2]].innerText;
+    if (pos_1 != "" && pos_2 != "" && pos_3 != "") {
+      if (pos_1 === pos_2 && pos_3 === pos_2) {
+        console.log("winner:", pos_1);
+      }
+    }
+  }
+}
