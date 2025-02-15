@@ -42,7 +42,12 @@ body {
   color: white;
 }
 .msg-container {
-  height: 10vmin;
+  height: 100vmin;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 4rem;
 }
 .hide {
   display: none;
