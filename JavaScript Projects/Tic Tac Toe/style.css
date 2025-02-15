@@ -35,18 +35,23 @@ body {
 #reset {
   background-color: rgb(45, 84, 84);
   height: 40px;
+  cursor: pointer;
   width: 70px;
   border: none;
   border-radius: 10px;
   color: white;
 }
 .msg-container {
-  height: 30vmin;
+  height: 10vmin;
 }
-#Winner-para {
-  font-size: 5vmin;
+.hide {
+  display: none;
+}
+#winner-para {
+  font-size: 4vmin;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
+  color: rgb(212, 103, 219);
 }
 #new-btn {
   border: none;
@@ -55,4 +60,5 @@ body {
   color: white;
   width: 80px;
   border-radius: 5px;
+  cursor: pointer;
 }
