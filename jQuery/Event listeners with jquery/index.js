@@ -6,10 +6,13 @@ $("h1").addClass("big-title");
 //   });
 // }
 //click event listener in jQuery
-$("button").click(() => {
-  $("h1").css("color", "purple");
-});
+// $("button").click(() => {
+//   $("h1").css("color", "purple");
+// });
 //keypress event listener in jQuery
-$(document).keypress((event) => {
-  $("h1").text(event.key);
+// $(document).keypress((event) => {
+//   $("h1").text(event.key);
+// });
+$("h1").on("mouseover", () => {
+  $("h1").css("color", "purple");
 });
