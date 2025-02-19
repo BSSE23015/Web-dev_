@@ -1,7 +1,18 @@
 var buttonColours = ["red", "blue", "green", "yellow"];
 var gamePattern = [];
 var userClickedPattern = [];
+var level = 0;
+var started = false;
+$(".btn").click(function () {
+  var userChosenColour = $(this).attr("id");
+  userClickedPattern.push(userChosenColour);
+  playSound(userChosenColour);
+  animatePress(userChosenColour);
+  checkAnswer(userClickedPattern.length - 1);
+});
 function nextSequence() {
+  //6. Once nextSequence() is triggered, reset the userClickedPattern to an empty array ready for the next level.
+  userClickedPattern = [];
   // function generate a new random number between 0 and 3, and store it in a variable called randomNumber
   let randomNumber = Math.floor(Math.random() * 4);
   //a new variable called randomChosenColour and use the randomNumber from step 2 to select a random colour from the buttonColours array.
@@ -14,11 +25,61 @@ function nextSequence() {
     .fadeIn(100)
     .fadeOut(100)
     .fadeIn(100);
-  $("button").on("click", () => {
-    handler(randomChosenColour);
-  });
+  var audio = new Audio("sounds/" + randomChosenColour + ".mp3");
+  audio.play();
+  ++level;
+  $("h1").text("level " + level);
 }
 
-function handler(randomChosenColour) {
-  let userChosenColour = randomChosenColour;
+function playSound(name) {
+  var audio = new Audio("sounds/" + name + ".mp3");
+  audio.play();
+}
+
+function animatePress(currentColour) {
+  $("#" + currentColour).addClass("pressed ");
+  setTimeout(function () {
+    $("#" + currentColour).removeClass("pressed");
+  }, 100);
+}
+
+$(document).keydown(function () {
+  if (!started) {
+    nextSequence();
+    started = true;
+  }
+});
+
+function checkAnswer(currentLevel) {
+  if (userClickedPattern[currentLevel] === gamePattern[currentLevel]) {
+    console.log("success");
+    if (userClickedPattern.length === gamePattern.length) {
+      setTimeout(function () {
+        nextSequence();
+      }, 1000);
+    }
+  } else {
+    $("body").addClass("game-over");
+    var audio = new Audio("sounds/wrong.mp3");
+    audio.play();
+    setTimeout(function () {
+      $("body").removeClass("game-over");
+    }, 200);
+    $("h1").text("Game Over, Press Any Key to Restart");
+    startOver();
+    console.log("Wrong");
+  }
+}
+function matchArrays() {
+  for (var i = 0; i < userClickedPattern.length; i++) {
+    if (gamePattern[i] === userClickedPattern[i]) {
+      return true;
+    }
+  }
+  return false;
+}
+function startOver() {
+  gamePattern = [];
+  level = 0;
+  started = false;
 }
