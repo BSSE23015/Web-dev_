@@ -6,7 +6,7 @@
 // });
 
 const f2s = require("fs");
-f2s.readFile("./message.txt", (err, data) => {
+f2s.readFile("./message.txt", "utf8", (err, data) => {
   if (err) throw err;
   console.log(data);
 });
