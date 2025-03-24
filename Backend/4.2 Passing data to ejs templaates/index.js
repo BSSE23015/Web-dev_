@@ -5,14 +5,14 @@ const app = express();
 const port = 3000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
-
+var numLetters = 0;
 app.get("/", (req, res) => {
-  res.render("index.ejs");
+  res.render("index.ejs", { numLetters });
 });
 
 app.post("/submit", (req, res) => {
-  const num_Letters = req.body["fname"] + req.body["lname"];
-  res.render("index.ejs");
+  numLetters = req.body["fname"].length + req.body["lname"].length;
+  res.render("index.ejs", { numLetters });
 });
 
 app.listen(port, () => {
