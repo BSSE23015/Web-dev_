@@ -32,7 +32,9 @@ app.post("/submit", (req, res) => {
   var nou = noun[rand_noun_num];
   //2. Send the index.ejs as a response and add the adjective and noun to the res.render
   //3. Test to make sure that the random words display in the h1 element in index.ejs
-  res.render("index.ejs", {});
+  var name_generated = adject + nou;
+  console.log(name_generated);
+  res.render("index.ejs", { name_generated });
 });
 
 app.listen(port, () => {
