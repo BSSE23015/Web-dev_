@@ -41,7 +41,7 @@ app.post("/submit", (req, res) => {
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
-
+//the problem i faced was that the prettier extension was auto formating and auto completeing the tags in partials which should not be done in partials that's why i was getting error
 const adj = [
   "abandoned",
   "able",
