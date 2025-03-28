@@ -1,10 +1,10 @@
 <%- include("partials/header.ejs")%>
 
 <!-- Full-width image -->
-<div class="container-fluid p-0">
+<div class="container mb-1 border-bottom">
   <img
     id="main-img"
-    src="/blog pic.avif"
+    src="/blog pic.png"
     alt="Blog Image"
     class="img-fluid w-100"
     style="height: 70vh; object-fit: cover"
@@ -19,7 +19,11 @@
 <!-- Centered button -->
 <div class="container text-center mt-4">
   <form action="/newBlog">
-    <input type="submit" value="New Blog" class="btn btn-primary" />
+    <div class="col-lg-6 col-xxl-4 my-5 mx-auto">
+      <div class="d-grid gap-2">
+        <button class="btn btn-primary" type="submit">New Blog</button>
+      </div>
+    </div>
   </form>
 </div>
 
