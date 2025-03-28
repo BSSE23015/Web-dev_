@@ -10,15 +10,19 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 app.get("/", (req, res) => {
-  res.render("index.ejs");
+  res.render("index.ejs", { blogs: blogs });
 });
 
 app.get("/blog", (req, res) => {
   res.render("blog.ejs");
 });
 
-app.get("/newBlog", (req, res) => {
-  res.render("new_blog.ejs");
+app.get("/new_Blog", (req, res) => {
+  res.render("new_blog.ejs", { blogs: blogs });
+});
+
+app.get("/blog_form", (req, res) => {
+  res.render("blog_form.ejs", { blogs: blogs });
 });
 
 app.post("/submit", (req, res) => {
@@ -27,7 +31,7 @@ app.post("/submit", (req, res) => {
   console.log(title);
   console.log(description);
   blogs.push({ title: title, description: description });
-  res.redirect("/blog");
+  res.redirect("/");
 });
 
 app.listen(port, () => {
