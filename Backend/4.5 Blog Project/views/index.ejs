@@ -1,7 +1,10 @@
 <%- include("partials/header.ejs")%>
-<section id="first_section">
-  <div id="title">
-    <h1>Welcome to my Blog Site.</h1>
-  </div>
-</section>
+<div id="container">
+  <h1>Blog Site</h1>
+
+  <form action="/submit" method="POST">
+    <label>New Article</label><br />
+    <input type="submit" value="New Article" />
+  </form>
+</div>
 <%- include("partials/footer.ejs")%>
