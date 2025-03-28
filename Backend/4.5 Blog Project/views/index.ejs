@@ -1,14 +1,26 @@
 <%- include("partials/header.ejs")%>
 
-<div id="container">
-  <div class="blog-header">
-    <img src="/blog pic.avif" alt="Blog Image" />
-    <h1>Blog Site</h1>
-  </div>
+<!-- Full-width image -->
+<div class="container-fluid p-0">
+  <img
+    id="main-img"
+    src="/blog pic.avif"
+    alt="Blog Image"
+    class="img-fluid w-100"
+    style="height: 70vh; object-fit: cover"
+  />
 </div>
 
-<form action="/newBlog">
-  <input type="submit" value="New Blog" class="btn" />
-</form>
+<!-- Centered heading -->
+<div class="container text-center mt-3">
+  <h1>Blog Site</h1>
+</div>
+
+<!-- Centered button -->
+<div class="container text-center mt-4">
+  <form action="/newBlog">
+    <input type="submit" value="New Blog" class="btn btn-primary" />
+  </form>
+</div>
 
 <%- include("partials/footer.ejs")%>
