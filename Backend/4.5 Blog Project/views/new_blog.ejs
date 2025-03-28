@@ -1,6 +1,99 @@
 <%- include("partials/header.ejs")%>
-<div id="container">
-  <h2>Your Own Blog</h2>
+
+<div
+  class="container p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary"
+>
+  <div class="col-lg-6 px-0">
+    <h1 class="display-4 fst-italic">Welcome to Our Blog Hub!</h1>
+    <p class="lead my-3">
+      This is a space where you can read engaging blogs and contribute your own
+      ideas. Whether you love writing about technology, lifestyle, business, or
+      personal experiences, this is the perfect platform to share and explore.
+    </p>
+  </div>
+</div>
+<% if( locals.blogs && locals.blogs.length>0){%>
+<div class="container">
+  <div class="row mb-2">
+    <div class="col-md-6">
+      <div
+        class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+      >
+        <div class="col p-4 d-flex flex-column position-static">
+          <h3 class="mb-0">Technology & Software Development</h3>
+          <div class="mb-1 text-body-secondary">Nov 12</div>
+          <p class="card-text mb-auto">
+            "The Future of AI: How Machine Learning is Changing the World"
+            "Mastering JavaScript: Tips & Tricks for Beginners" "Why Web3 and
+            Blockchain Matter for the Future of the Internet" "From Zero to
+            Hero: A Guide to Becoming a Full-Stack Developer" "The Best VS Code
+            Extensions for Web Developers in 2025"
+          </p>
+          <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
+            Continue reading
+            <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
+          </a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <svg
+            class="bd-placeholder-img"
+            width="200"
+            height="250"
+            xmlns="http://www.w3.org/2000/svg"
+            role="img"
+            aria-label="Placeholder: Thumbnail"
+            preserveAspectRatio="xMidYMid slice"
+            focusable="false"
+          >
+            <title>Placeholder</title>
+            <rect width="100%" height="100%" fill="#55595c"></rect>
+            <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div
+        class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+      >
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-success-emphasis"
+            >Blog 2</strong
+          >
+          <h3 class="mb-0">IT Industry</h3>
+          <div class="mb-1 text-body-secondary">Nov 11</div>
+          <p class="mb-auto">
+            This is a wider card with supporting text below as a natural lead-in
+            to additional content.
+          </p>
+          <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
+            Continue reading
+            <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
+          </a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <svg
+            class="bd-placeholder-img"
+            width="200"
+            height="250"
+            xmlns="http://www.w3.org/2000/svg"
+            role="img"
+            aria-label="Placeholder: Thumbnail"
+            preserveAspectRatio="xMidYMid slice"
+            focusable="false"
+          >
+            <title>Placeholder</title>
+            <rect width="100%" height="100%" fill="#55595c"></rect>
+            <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% } else%>
+<div class="container text-center mt-4">
+  <h3>No blogs available. Start by adding a new blog!</h3>
   <form action="/submit" method="POST">
     <label>New Article</label><br />
     <input type="text" name="title" required placeholder="Title" /><br />
