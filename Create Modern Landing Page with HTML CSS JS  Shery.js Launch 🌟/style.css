@@ -39,24 +39,38 @@ body {
 #navBar {
   width: 100%;
   padding: 40px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 #nlogo {
   height: 60px;
 }
-#nLeft {
+#nLeft,
+#nRight {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 20px;
+  gap: 60px;
 }
 
-#nLeft a {
+#navBar a {
   text-decoration: none;
   color: white;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 15px;
-  font-weight: 700;
-  font-family: "gilroy";
+  font-size: 13px;
+  font-weight: 600;
+  font-family: "Courier New", Courier, monospace;
+}
+
+#hero {
+  height: 200px;
+  background-color: red;
+  width: 100%;
+  display: flex;
+}
+
+#heroLeft {
+  min-width: 50%;
+  background-color: yellow;
 }
