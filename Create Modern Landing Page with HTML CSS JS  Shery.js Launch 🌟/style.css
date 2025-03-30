@@ -94,11 +94,18 @@ body {
 }
 
 #heroLeft .element {
+  position: relative;
   height: 10vw;
   overflow: hidden;
 }
 
+#heroLeft .element h1:nth-child(1) {
+  top: 0%;
+}
+
 #heroLeft .element h1 {
+  top: 100%;
+  position: absolute;
   line-height: 0.9;
   font-family: "kajiro";
   font-weight: 100;
