@@ -81,9 +81,9 @@ body {
 
 #heroRight {
   width: 25%;
-  background-color: green;
-  color: white;
-  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 #heroLeft .element {
@@ -104,4 +104,11 @@ body {
   font-family: "kajiro";
   padding: 0.8vw 3vw;
   margin-top: 1vw;
+}
+
+#heroRight p {
+  color: white;
+  text-align: right;
+  margin-bottom: 50px;
+  font-size: 14px;
 }
