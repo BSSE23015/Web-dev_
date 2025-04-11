@@ -9,7 +9,7 @@ const API_URL = "https://secrets-api.appbrewery.com/";
 const yourUsername = "Hassan";
 const yourPassword = "1111";
 const yourAPIKey = "062843f3-b20b-4462-9bde-0fa48aefdb03";
-const yourBearerToken = "29177e78-599f-44ee-a5c4-47bf03189d9e";
+const yourBearerToken = "f8cff456-56e7-47c3-9f41-80c0db1b2745";
 
 app.get("/", (req, res) => {
   res.render("index.ejs", { content: "API Response." });
@@ -89,10 +89,10 @@ app.get("/bearerToken", async (req, res) => {
 
   try {
     const result = await axios.get(
-      "https://secrets-api.appbrewery.com/secrets/42",
+      "https://secrets-api.appbrewery.com/secrets/2",
       config
     );
-    const final_data = JSON.stringify(response.data);
+    const final_data = JSON.stringify(result.data);
     res.render("index.ejs", { data: final_data });
   } catch (error) {
     res.status(404).send(error.message);
