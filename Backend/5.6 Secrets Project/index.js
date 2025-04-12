@@ -12,12 +12,27 @@
 
 // 6. Listen on your predefined port and start the server.
 import express from "express";
+import axios from "axios";
+
 const app = express();
 const port = 3000;
+
 app.use(express.static("public"));
 
-app.get("/", (req, res) => {
-  res.render("index.ejs", { secret: "", user: "" });
+const API_URL = "https://secrets-api.appbrewery.com/random";
+
+app.get("/", async (req, res) => {
+  try {
+    const result = await axios.get(API_URL);
+
+    res.render("index.ejs", {
+      secret: JSON.stringify(result.data.secret),
+      user: JSON.stringify(result.data.username),
+    });
+  } catch (error) {
+    console.log(error.response.data);
+    res.status(500);
+  }
 });
 
 app.listen(port, () => {
