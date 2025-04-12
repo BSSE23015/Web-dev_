@@ -1,11 +1,11 @@
 :root {
-  --card-height: 65vh;
-  --card-width: calc(var(--card-height) / 1.5);
+  --card-height: 60vh;
+  --card-width: calc(var(--card-height) / 1.1);
 }
 
 body {
   min-height: 100vh;
-  background: #212534;
+  background: #040506;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -19,8 +19,9 @@ h1 {
   margin-bottom: 20px;
 }
 .card {
-  background: url("../images/whisper-img.jpg");
-  background-size: cover;
+  background: url("https://i.pinimg.com/736x/04/b9/e6/04b9e6a075a2860863012853adc92ac9.jpg");
+  background-size: 100% 100%;
+
   background-position: center;
   background-repeat: no-repeat;
   width: var(--card-width);
