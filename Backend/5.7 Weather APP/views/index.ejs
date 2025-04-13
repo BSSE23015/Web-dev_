@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/main.css" />
+    <title>Weather App</title>
+  </head>
+  <body>
+    <div id="container">
+      <div id="working_area">
+        <form id="myform" action="/give" method="post">
+          <h3>Enter City.</h3>
+          <input type="text" name="city" placeholder="City Name" required />
+          <button>Submit</button>
+        </form>
+        <% if(locals.content){%>
+        <div id="Weather_area">
+          <div id="location">
+            <h3>Location Details.</h3>
+            <p>Counry: <span><%= content.location.country%></span></p>
+            <p>City: <span><%= content.location.name%></span></p>
+            <p>Region: <span><%= content.location.region%></span></p>
+            <p>LocalTime: <span><%= content.location.localtime%></span></p>
+            <p>TimeZone: <span><%= content.location.timezone_id%></span></p>
+          </div>
+          <div id="current">
+            <div id="icon">
+              <img src="<%=content.current.weather_icons%>" />
+            </div>
+            <div>
+              <p>Time: <span><%= content.current.observation_time%></span></p>
+              <p>Temperature:<span><%=content.current.temperature%></span>°C</p>
+              <p>
+                Description:<span
+                  ><%=content.current.weather_descriptions%></span
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <%} %>
+      </div>
+    </div>
+    <script src="../index.js"></script>
+  </body>
+</html>

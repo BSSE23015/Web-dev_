@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Courier New", Courier, monospace;
+}
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-image: url("./background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: blur(3px); /* Adjust as needed */
+  z-index: -1;
+}
+#container {
+  height: 95vh;
+  width: 100%;
+}
+#working_area {
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+  padding-top: 50px;
+}
+
+form {
+  height: 100%;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  color: beige;
+  height: 150px;
+  width: 400px;
+  margin: 30px auto;
+  box-shadow: 4px 4px 5px black;
+  border-radius: 20px;
+}
+form input {
+  width: 100%;
+  font-size: 15px;
+  border: none;
+  margin: 8px 10px;
+  border-radius: 5px;
+}
+form button {
+  width: 100%;
+  font-size: 15px;
+  border: none;
+  background-color: rgb(52, 64, 107);
+  margin: 8px 10px;
+  border-radius: 5px;
+  color: beige;
+  transition: 0.5s;
+}
+
+button:hover {
+  background-color: rgb(65, 75, 120);
+  cursor: pointer;
+}
+#Weather_area {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+#location {
+  color: beige;
+  box-shadow: 4px 4px 5px black;
+  padding: 10px;
+  width: 400px;
+  height: 200px;
+  margin-top: 20px;
+}
+#location p,
+#current p {
+  margin: 5px;
+}
+#current {
+  color: beige;
+  box-shadow: 4px 4px 5px black;
+  padding: 10px;
+  height: 200px;
+  width: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+#current img {
+  height: 100px;
+  width: 120px;
+}
