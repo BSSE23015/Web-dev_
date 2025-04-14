@@ -30,7 +30,7 @@ app.post("/give", async (req, res) => {
     res.render("index", { content: null });
   }
 });
-
+//listen to port 3000.
 app.listen(port, () => {
   console.log(`Listening to ${port}.`);
 });
