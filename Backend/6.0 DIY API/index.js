@@ -10,16 +10,15 @@ let API_URL = "http://localhost:3000";
 app.use(bodyParser.urlencoded({ extended: true }));
 
 //1. GET a random joke
-app.get("/random", async (req, res) => {
+app.get("/random", (req, res) => {
   const ranInex = Math.floor(Math.random() * jokes.length);
   res.json(jokes[ranInex]);
 });
 //2. GET a specific joke
-let id;
-app.get("jokes/:id", (req, res) => {
+app.get("/jokes/:id", (req, res) => {
   const id = parseInt(req.params.id);
-
-  res.json(jokes[id]);
+  const foundJoke = jokes.find((joke) => joke.id === id);
+  res.json(foundJoke);
 });
 //3. GET a jokes by filtering on the joke type
 
