@@ -15,7 +15,12 @@ app.get("/random", async (req, res) => {
   res.json(jokes[ranInex]);
 });
 //2. GET a specific joke
+let id;
+app.get("jokes/:id", (req, res) => {
+  const id = parseInt(req.params.id);
 
+  res.json(jokes[id]);
+});
 //3. GET a jokes by filtering on the joke type
 
 //4. POST a new joke
