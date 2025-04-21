@@ -38,7 +38,18 @@ app.post("/jokes", (req, res) => {
   res.json(new_joke);
 });
 //5. PUT a joke
-
+app.put("/jokes/:id", (req, res) => {
+  const to_id = parseInt(req.params.id);
+  const editedJoke = {
+    id: to_id,
+    jokeType: req.body.jokeType, // use correct key
+    jokeText: req.body.jokeText, // use correct key
+  };
+  let index = jokes.findIndex((joke) => joke.id === to_id);
+  jokes[index] = editedJoke;
+  console.log(jokes[index]);
+  res.json(editedJoke);
+});
 //6. PATCH a joke
 
 //7. DELETE Specific joke
