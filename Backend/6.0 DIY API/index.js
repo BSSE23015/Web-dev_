@@ -27,7 +27,16 @@ app.get("/filter", (req, res) => {
   res.json(filteredJokes);
 });
 //4. POST a new joke
-
+app.post("/jokes", (req, res) => {
+  const new_joke = {
+    id: jokes.length + 1,
+    jokeText: req.body.jokeText,
+    type: req.body.type,
+  };
+  jokes.push(new_joke);
+  console.log(jokes.slice(-1));
+  res.json(new_joke);
+});
 //5. PUT a joke
 
 //6. PATCH a joke
