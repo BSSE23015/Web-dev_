@@ -11,7 +11,7 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-// Route to render the main page//
+// Route to render the main page
 app.get("/", async (req, res) => {
   try {
     const response = await axios.get(`${API_URL}/posts`);
