@@ -78,6 +78,7 @@ app.delete("/jokes/:id", (req, res) => {
   }
 });
 //8. DELETE All jokes
+//if jokes/all was used it will take all as a id and sends a error
 app.delete("/all", (req, res) => {
   let userKey = req.query.key;
   if (userKey === masterKey) {
